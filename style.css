@@ -218,3 +218,19 @@ main{
 }
 
 
+
+
+
+  /* Определяем цвета градиента */
+  .area-gradient {
+    fill: #3498db;
+    opacity: 1; /* Прозрачность заливки */
+
+  }
+
+  .line {
+    fill: none;
+    stroke: #3498db;
+    stroke-width: 0.2;
+    stroke-linecap: round;
+  }
