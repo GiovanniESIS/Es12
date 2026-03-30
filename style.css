@@ -22,9 +22,25 @@ body{
 header{
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 10px 0;
     padding-top: 0;
     text-align: center;
+}
+
+header .topbar-main{
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo-container{
+    width: 200px;
+}
+
+.user-profile-container{
+    display: flex;
+    width: 200px;
 }
 
 .search-form input{
@@ -39,7 +55,8 @@ header{
 
 .layout{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin: 0;
     gap: 20px;
 }
 
@@ -61,6 +78,11 @@ nav a:hover{
 }
 main{
     padding: 20px;
+    flex: 1;
+}
+
+.layout aside {
+    width: 200px;
 }
 .container{
     display: flex;
@@ -75,7 +97,12 @@ main{
 }
 
 .logo-container img{
-    padding: 10px 15px;
+    height: 40px;
+    padding: 10px;
+}
+
+.user-menu ul{
+    display: none;
 }
 
 .card{
@@ -87,12 +114,26 @@ main{
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.topbar-main{
-    background-color: var(--background-color);
+
+.search-container{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    flex: 1;
+    gap: 10px;
 }
+
+.search-container  {
+    width: 100%;
+}
+
+.search-form{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    width: 90%;
+}
+
+
+
 
 
