@@ -10,6 +10,7 @@
     --background-color: #FAFAFC;
     --secondary-bg-color: #F4F4F8;
     --text-color: #131525;
+    --input-bg-color:#EBECF2;
 }
 
 body{
@@ -20,10 +21,20 @@ body{
 
 header{
     background-color: var(--background-color);
-    color: white;
+    color: var(--text-color);
     padding: 10px 0;
     padding-top: 0;
     text-align: center;
+}
+
+.search-form input{
+    border: none;
+    outline: none;
+}
+
+.search-form , input{
+    background-color: var(--input-bg-color);
+    padding: 5px;
 }
 
 .layout{
@@ -63,7 +74,9 @@ main{
     align-items: center;
 }
 
-.logo-container img{}
+.logo-container img{
+    padding: 10px 15px;
+}
 
 .card{
     background-color: var(--secondary-bg-color);
