@@ -442,8 +442,6 @@ main {
     background-color: #F1F2F8;
     font-size: 14px;
     text-align: left;
-    padding: 5px;
-    padding-inline: 6px;
 }
 
 .container .card .card-table tr {
@@ -523,3 +521,15 @@ main {
 .no-bg-color {
     background-color: transparent;
 }
+
+.card-graphic .circle {
+  fill: #fff;
+  transition: 0.3s;
+   transform-origin: center;
+   transform-box: fill-box;
+}
+
+.card-graphic .circle:hover {
+  transform: scale(1.5);
+}
+
