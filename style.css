@@ -95,23 +95,12 @@ input {
 }
 
 .layout aside nav ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     list-style: none;
     gap: 30px;
 }
 
 .layout aside nav ul li {
     display: flex;
-}
-
-.layout aside nav a::after {
-    display: inline-block;
-    content: '>';
-    padding-top: 3px;
-    font-size: 12px;
-    margin-right: 15px;
 }
 
 .layout aside nav ul li a {
@@ -128,11 +117,6 @@ input {
     color: var(--accent-text-color, white);
 }
 
-.layout aside nav ul li a span {
-    flex: 1;
-    padding-left: 15px;
-}
-
 .layout aside nav ul {
     display: flex;
     flex-direction: column;
@@ -147,9 +131,11 @@ input {
 
 .layout aside nav a::after {
     display: inline-block;
-    content: '>';
+    content: "\f054";
+    font-family: "Font Awesome 7 Free";
     padding-top: 3px;
     font-size: 12px;
+    font-weight: 900;
     margin-right: 15px;
 }
 
@@ -240,14 +226,32 @@ main {
 .card .card-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.card .card-content .card-graphic .text-in-card {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-right: 30px;
+}
+
+.card .card-content .card-graphic .text-in-card #number-expires{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.statistica.container .card .card-title .card-actions  .card-action-button {
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 16px;
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.project-btn {
     background-color: #D6E0F6;
-    border: none;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 16px;
+    
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.project-btn i {
@@ -256,10 +260,6 @@ main {
 
 .statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
     background-color: #EFF8F3;
-    border: none;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 16px;
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
@@ -273,10 +273,6 @@ main {
 
 .statistica.container .card .card-title .card-actions .card-action-button.expired {
     background-color: #FBF1F3;
-    border: none;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 16px;
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.expired i {
@@ -285,10 +281,6 @@ main {
 
 .statistica.container .card .card-title .card-actions .card-action-button.total-expenses {
     background-color: #CCD8F1;
-    border: none;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 16px;
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.total-expenses i {
@@ -314,9 +306,11 @@ main {
 }
 
 .clienti.container .card.client-card .client-list .row-list .client-price::after {
-    content: '>';
+    content: "\f054";
+    font-family: "Font Awesome 7 Free";
     margin-left: 5px;
     font-size: 14px;
+    font-weight: 900;
     align-items: center;
 }
 
