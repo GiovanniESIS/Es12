@@ -232,6 +232,40 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.card .card-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.project-btn {
+    background-color: #D6E0F6;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.project-btn i {
+    color: #678AC5;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
+    background-color: #EFF8F3;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month  {
+    color: #1C5C31;
+}
+
+
+.statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month i {
+    font-size: 12px;
+}
+
 .container.clienti .row-list {
     display: flex;
     flex-direction: row;
