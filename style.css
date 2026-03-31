@@ -11,8 +11,10 @@
     --secondary-bg-color: #F4F4F8;
     --success-bg-color: #EFF8F3;
     --success-text-color: #1C5C31;
-    --pending-bg-color: #CCD8F1;
-    --pending-text-color: #254C8C;
+    --waiting-bg-color: #CCD8F1;
+    --waiting-text-color: #254C8C;
+    --pending-bg-color: #F7EAD0;
+    --pending-text-color: #5B4B30;
     --card-bg-color: #FDFDFE;
     --text-color: #131525;
     --input-bg-color: #EBECF2;
@@ -236,6 +238,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8px;
 }
 
 .card .card-content .card-graphic .text-in-card {
@@ -259,12 +262,12 @@ main {
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.project-btn {
-    background-color: var(--pending-bg-color);
+    background-color: #D7E0F7;
 
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.project-btn i {
-    color: #678AC5;
+    color: #688BC5;
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
@@ -293,9 +296,8 @@ main {
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.total-expenses i {
-    color: var(--pending-text-color);
+    color: var(--waiting-text-color);
 }
-
 .container.clienti .row-list {
     display: flex;
     flex-direction: row;
@@ -326,6 +328,26 @@ main {
 .clienti.container .card.client-card .client-list .row-list .client-price span {
     font-weight: 600;
 
+}
+
+.success {
+    color: var(--success-text-color);
+    background-color: #E4F0E7;
+}
+
+.cancelled {
+    color: #B9443B;
+    background-color: #FBF1F3;
+}
+
+.pending{
+    color: var(--pending-text-color);
+    background-color: var(--pending-bg-color);
+}
+
+.in-progress{
+    color: var(--waiting-text-color);
+    background-color: var(--waiting-bg-color);
 }
 
 
@@ -360,6 +382,23 @@ main {
     opacity: 1;
 }
 
+.clienti.container .card.client-card .card-title .card-actions .card-action-list{
+    background-color: #F0F3FB;
+    display: flex;
+    color: #24427A;
+    align-items: center;
+}
+
+.clienti.container .card.client-card .card-title .card-actions .card-action-list::after {
+    content: "\f054";
+    font-family: "Font Awesome 7 Free";
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    flex-direction: row;
+}
+
 .line {
     fill: none;
     stroke: #3498db;
@@ -367,7 +406,7 @@ main {
     stroke-linecap: round;
 }
 
-.container .card .card-table .table-row {
+.container .card .card-table {
     font-size: 12px;
 }
 
@@ -375,11 +414,28 @@ main {
     text-align: left;
     padding: 5px;
     padding-inline: 6px;
+    font-weight: 600;
 }
 
-.container .card .card-table .table-row td {
-    padding: 5px;
+.container .card .card-table td {
+    padding: 10px 3px;
     padding-inline: 6px;
+}
+
+.container .card .card-table.invoices-table tr td:last-child {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.big{
+    font-size: 18px;
+}
+
+.container .card.container-card .card-title.task-title span {
+    white-space: nowrap;
+}
+.container .card.container-card .size {
+    font-size: 13px;
 }
 
 .container .card .card-table .table-header th {
@@ -405,8 +461,6 @@ main {
     content: "\f054";
     font-family: "Font Awesome 7 Free";
     margin-left: 5px;
-    text-align: center;
-    align-items: center;
     font-size: 10px;
     font-weight: 900;
     display: flex;
@@ -421,7 +475,7 @@ main {
     padding-inline: 0;
 }
 
-.container .card.container-card .card-table .table-row .col-stato .badge {
+.container .card.container-card .card-table .col-stato .badge {
     display: inline-block;
     white-space: nowrap;
     font-size: 11px;
@@ -431,16 +485,41 @@ main {
     line-height: 18px;
 }
 
-.container .card.container-card .card-table .table-row .col-stato .badge.in-progress {
-    color: var(--success-text-color);
-    background-color: #E4F0E7;
-}
-
-.container .card.container-card .card-table .table-row .col-stato .badge.pending {
-    color: var(--pending-text-color);
-    background-color: var(--pending-bg-color);
-}
-
-.container .card.container-card .card-table .table-row td.col-stato {
+.container .card.container-card .card-table td.col-stato {
     padding: 0;
+    font-weight: 600;
+}
+
+.clienti.container .card .card-content .card-graphic .list-month {
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    color: #6F7287;
+    gap: 21px;
+    margin-bottom: 5px;
+}
+
+.clienti.container .card .card-content .card-graphic .container-graphic {
+    display: flex;
+    gap: 5px;
+}
+.clienti.container .card .card-content .card-graphic .list-cash-y{
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    gap: 24px;
+}
+.clienti.container .card .card-content .card-graphic .summary .table-summary {
+    text-align: center; 
+    align-items: center;
+    padding: 5px;
+}
+
+.clienti.container .card .card-content .card-graphic .summary .table-summary .table-header-summary tr th{
+    font-size: 12px;
+    color: #797D88;
+}
+
+.no-bg-color {
+    background-color: transparent;
 }
