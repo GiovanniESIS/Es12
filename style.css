@@ -445,3 +445,15 @@ main {
 .container .card.container-card .card-table .table-row td.col-stato {
     padding: 0;
 }
+
+.card-graphic .circle {
+  fill: #fff;
+  transition: 0.3s;
+   transform-origin: center;
+   transform-box: fill-box;
+}
+
+.card-graphic .circle:hover {
+  transform: scale(1.5);
+}
+
