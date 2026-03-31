@@ -219,6 +219,23 @@ main {
     flex: 2;
 }
 
+.clienti.container .card.client-card .client-list .row-list .client-info {
+    flex: 1;
+}
+
+.clienti.container .card.client-card .client-list .row-list .client-price::after {
+    content: '>';
+    margin-left: 5px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.clienti.container .card.client-card .client-list .row-list .client-price span {
+    font-weight: 600;
+
+}
+
+
 
 .container.clienti .row-list img{
     width: 30px;
