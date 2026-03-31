@@ -9,6 +9,10 @@
     --accent-bg-color: #292F41;
     --background-color: #FAFAFC;
     --secondary-bg-color: #F4F4F8;
+    --success-bg-color: #EFF8F3;
+    --success-text-color: #1C5C31;
+    --pending-bg-color: #CCD8F1;
+    --pending-text-color: #254C8C;
     --card-bg-color: #FDFDFE;
     --text-color: #131525;
     --input-bg-color: #EBECF2;
@@ -21,6 +25,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 header {
@@ -62,14 +71,14 @@ header .topbar-main {
     border-radius: 50%;
 }
 
-.user-profile-container .user-profile .user-menu{
+.user-profile-container .user-profile .user-menu {
     margin-right: 10px;
 }
 
 .user-profile-container .user-profile .user-menu::after {
     margin-left: 5px;
     font-size: 10px;
-    content: "\f054"; 
+    content: "\f054";
     font-family: "Font Awesome 7 Free";
     font-weight: 900;
     margin-left: 8px;
@@ -236,13 +245,13 @@ main {
     margin-right: 30px;
 }
 
-.card .card-content .card-graphic .text-in-card #number-expires{
+.card .card-content .card-graphic .text-in-card #number-expires {
     display: flex;
     justify-content: space-between;
     font-size: 22px;
 }
 
-.statistica.container .card .card-title .card-actions  .card-action-button {
+.statistica.container .card .card-title .card-actions .card-action-button {
     border: none;
     border-radius: 5px;
     padding: 4px;
@@ -250,8 +259,8 @@ main {
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.project-btn {
-    background-color: #D6E0F6;
-    
+    background-color: var(--pending-bg-color);
+
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.project-btn i {
@@ -259,11 +268,11 @@ main {
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
-    background-color: #EFF8F3;
+    background-color: var(--success-bg-color);
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
-    color: #1C5C31;
+    color: var(--success-text-color);
 }
 
 
@@ -284,7 +293,7 @@ main {
 }
 
 .statistica.container .card .card-title .card-actions .card-action-button.total-expenses i {
-    color:#254C8C;
+    color: var(--pending-text-color);
 }
 
 .container.clienti .row-list {
@@ -346,16 +355,9 @@ main {
     width: 90%;
 }
 
-
-
-
-
-/* Определяем цвета градиента */
 .area-gradient {
     fill: #3498db;
     opacity: 1;
-    /* Прозрачность заливки */
-
 }
 
 .line {
@@ -363,4 +365,82 @@ main {
     stroke: #3498db;
     stroke-width: 0.2;
     stroke-linecap: round;
+}
+
+.container .card .card-table .table-row {
+    font-size: 12px;
+}
+
+.container .card .card-title span {
+    text-align: left;
+    padding: 5px;
+    padding-inline: 6px;
+}
+
+.container .card .card-table .table-row td {
+    padding: 5px;
+    padding-inline: 6px;
+}
+
+.container .card .card-table .table-header th {
+    background-color: #F1F2F8;
+    font-size: 14px;
+    text-align: left;
+    padding: 5px;
+    padding-inline: 6px;
+}
+
+.container .card .card-table tr {
+    border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+.container .card.container-card .card-title .card-action {
+    background-color: #F0F3FB;
+    display: flex;
+    color: #24427A;
+    align-items: center;
+}
+
+.container .card.container-card .card-title .card-action::after {
+    content: "\f054";
+    font-family: "Font Awesome 7 Free";
+    margin-left: 5px;
+    text-align: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 900;
+    display: flex;
+    flex-direction: row;
+}
+
+.container .card.container-card .card-title {
+    padding: 5px;
+}
+
+.container .card.container-ca td {
+    padding-inline: 0;
+}
+
+.container .card.container-card .card-table .table-row .col-stato .badge {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 2px 12px;
+    height: 18px;
+    border-radius: 12px;
+    line-height: 18px;
+}
+
+.container .card.container-card .card-table .table-row .col-stato .badge.in-progress {
+    color: var(--success-text-color);
+    background-color: #E4F0E7;
+}
+
+.container .card.container-card .card-table .table-row .col-stato .badge.pending {
+    color: var(--pending-text-color);
+    background-color: var(--pending-bg-color);
+}
+
+.container .card.container-card .card-table .table-row td.col-stato {
+    padding: 0;
 }
