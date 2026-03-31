@@ -377,17 +377,18 @@ main {
     padding-inline: 6px;
 }
 
-.container .card .card-table .table-row td {
-    padding: 5px;
-    padding-inline: 6px;
+.container .card .card-table  td {
+    padding: 15px 5px;
+}
+
+.container .card .card-table  th {
+    padding: 15px 5px;
 }
 
 .container .card .card-table .table-header th {
     background-color: #F1F2F8;
     font-size: 14px;
     text-align: left;
-    padding: 5px;
-    padding-inline: 6px;
 }
 
 .container .card .card-table tr {
