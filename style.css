@@ -62,10 +62,17 @@ header .topbar-main{
     border-radius: 50%;
 }
 
+.user-profile-container .user-profile .user-menu{
+    margin-right: 10px;
+}
+
 .user-profile-container .user-profile .user-menu::after {
-    content: '>';
     margin-left: 5px;
-    font-size: 14px;
+    font-size: 10px;
+    content: "\f054"; 
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    margin-left: 8px;
 }
 
 .search-form input{
