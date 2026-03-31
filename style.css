@@ -1,20 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-:root{
+:root {
     /*--primary-color: #333;
     --secondary-color: #444;*/
-    --accent-bg-color:#292F41;
+    --accent-bg-color: #292F41;
     --background-color: #FAFAFC;
     --secondary-bg-color: #F4F4F8;
-    --card-bg-color:#FDFDFE;
+    --card-bg-color: #FDFDFE;
     --text-color: #131525;
-    --input-bg-color:#EBECF2;
+    --input-bg-color: #EBECF2;
 }
 
-body{
+body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@ body{
     min-height: 100vh;
 }
 
-header{
+header {
     background-color: var(--background-color);
     color: var(--text-color);
     padding-top: 0;
@@ -31,18 +31,18 @@ header{
     height: 60px;
 }
 
-header .topbar-main{
+header .topbar-main {
     background-color: var(--background-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo-container{
+.logo-container {
     width: 200px;
 }
 
-.user-profile-container{
+.user-profile-container {
     display: flex;
     align-items: center;
     min-width: 200px;
@@ -56,7 +56,7 @@ header .topbar-main{
     margin-right: 10px;
 }
 
-.user-profile-container .user-profile .user-avatar img{
+.user-profile-container .user-profile .user-avatar img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -68,17 +68,18 @@ header .topbar-main{
     font-size: 14px;
 }
 
-.search-form input{
+.search-form input {
     border: none;
     outline: none;
 }
 
-.search-form , input{
+.search-form,
+input {
     background-color: var(--input-bg-color);
     padding: 5px;
 }
 
-.layout{
+.layout {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -107,7 +108,7 @@ header .topbar-main{
 }
 
 .layout aside nav ul li a {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
@@ -146,7 +147,7 @@ header .topbar-main{
 }
 
 .layout aside nav ul li a {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
@@ -164,22 +165,25 @@ header .topbar-main{
     padding-left: 15px;
 }
 
-nav{
-    color: var(--accent-text-color,white);
+nav {
+    color: var(--accent-text-color, white);
     padding: 10px 0;
     height: 100%;
 
 }
-nav a{
+
+nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
 }
-nav a:hover{
+
+nav a:hover {
     text-decoration: underline;
 }
-main{
+
+main {
     padding: 20px;
     flex: 1;
 }
@@ -188,24 +192,25 @@ main{
     width: 200px;
     background-color: var(--accent-bg-color);
 }
-.container{
+
+.container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.logo-container{
+.logo-container {
     background-color: var(--accent-bg-color);
     display: flex;
     align-items: center;
 }
 
-.logo-container img{
+.logo-container img {
     height: 40px;
     padding: 10px;
 }
 
-.user-menu ul{
+.user-menu ul {
     display: none;
 }
 
@@ -222,10 +227,10 @@ main {
     border-radius: 5px;
     padding: 15px;
     flex: 1;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.card .card-title{
+.card .card-title {
     display: flex;
     justify-content: space-between;
 }
@@ -250,13 +255,37 @@ main {
     font-size: 16px;
 }
 
-.statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month  {
+.statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month {
     color: #1C5C31;
 }
 
 
 .statistica.container .card .card-title .card-actions .card-action-button.revenue-per-month i {
     font-size: 12px;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.expired {
+    background-color: #FBF1F3;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.expired i {
+    color: #B9443B;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.total-expenses {
+    background-color: #CCD8F1;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.statistica.container .card .card-title .card-actions .card-action-button.total-expenses i {
+    color:#254C8C;
 }
 
 .container.clienti .row-list {
@@ -269,7 +298,7 @@ main {
     flex: 3;
 }
 
-.clienti.container .card.client-card{
+.clienti.container .card.client-card {
     flex: 2;
 }
 
@@ -291,28 +320,28 @@ main {
 
 
 
-.container.clienti .row-list img{
+.container.clienti .row-list img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
 
-.search-container{
+.search-container {
     display: flex;
     align-items: center;
     flex: 1;
     gap: 10px;
 }
 
-.search-container  {
+.search-container {
     width: 100%;
 }
 
-.search-form{
+.search-form {
     display: flex;
     align-items: center;
     margin-left: 5px;
-    gap:5px;
+    gap: 5px;
     width: 90%;
 }
 
@@ -320,16 +349,17 @@ main {
 
 
 
-  /* Определяем цвета градиента */
-  .area-gradient {
+/* Определяем цвета градиента */
+.area-gradient {
     fill: #3498db;
-    opacity: 1; /* Прозрачность заливки */
+    opacity: 1;
+    /* Прозрачность заливки */
 
-  }
+}
 
-  .line {
+.line {
     fill: none;
     stroke: #3498db;
     stroke-width: 0.2;
     stroke-linecap: round;
-  }
+}
