@@ -45,7 +45,27 @@ header .topbar-main{
 .user-profile-container{
     display: flex;
     align-items: center;
-    width: 200px;
+    min-width: 200px;
+}
+
+.user-profile-container .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-profile-container .user-profile .user-avatar img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-profile-container .user-profile .user-menu::after {
+    content: '>';
+    margin-left: 5px;
+    font-size: 14px;
 }
 
 .search-form input{
