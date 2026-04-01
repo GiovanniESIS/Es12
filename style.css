@@ -49,6 +49,12 @@ header .topbar-main {
     align-items: center;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .logo-container {
     width: 200px;
 }
@@ -102,7 +108,6 @@ input {
     flex: 1;
     flex-direction: row;
     margin: 0;
-    gap: 20px;
 }
 
 .layout aside nav ul {
@@ -187,21 +192,14 @@ nav a:hover {
     text-decoration: underline;
 }
 
-main {
-    padding: 20px;
-    flex: 1;
-}
+
 
 .layout aside {
     width: 200px;
     background-color: var(--accent-bg-color);
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+
 
 .logo-container {
     background-color: var(--accent-bg-color);
@@ -221,8 +219,11 @@ main {
 main {
     background-color: var(--secondary-bg-color);
     display: flex;
+    padding: 20px;
+    flex: 1;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+
 }
 
 .container .card {
@@ -238,7 +239,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
 }
 
 .card .card-content .card-graphic .text-in-card {
@@ -298,9 +298,11 @@ main {
 .statistica.container .card .card-title .card-actions .card-action-button.total-expenses i {
     color: var(--waiting-text-color);
 }
+
 .container.clienti .row-list {
     display: flex;
     flex-direction: row;
+    padding: 8px;
     gap: 10px;
 }
 
@@ -316,11 +318,16 @@ main {
     flex: 1;
 }
 
+.clienti.container .card.client-card .client-list {
+    margin-top: 15px;
+}
+
 .clienti.container .card.client-card .client-list .row-list .client-price::after {
     content: "\f054";
     font-family: "Font Awesome 7 Free";
     margin-left: 5px;
-    font-size: 14px;
+    color: #666;
+    font-size: 10px;
     font-weight: 900;
     align-items: center;
 }
@@ -340,12 +347,12 @@ main {
     background-color: #FBF1F3;
 }
 
-.pending{
+.pending {
     color: var(--pending-text-color);
     background-color: var(--pending-bg-color);
 }
 
-.in-progress{
+.in-progress {
     color: var(--waiting-text-color);
     background-color: var(--waiting-bg-color);
 }
@@ -382,7 +389,7 @@ main {
     opacity: 1;
 }
 
-.clienti.container .card.client-card .card-title .card-actions .card-action-list{
+.clienti.container .card.client-card .card-title .card-actions .card-action-list {
     background-color: #F0F3FB;
     display: flex;
     color: #24427A;
@@ -418,7 +425,7 @@ main {
 }
 
 .container .card .card-table td {
-    padding: 10px 3px;
+    padding: 15px 3px;
     padding-inline: 6px;
 }
 
@@ -427,13 +434,14 @@ main {
     font-weight: 600;
 }
 
-.big{
+.big {
     font-size: 18px;
 }
 
 .container .card.container-card .card-title.task-title span {
     white-space: nowrap;
 }
+
 .container .card.container-card .size {
     font-size: 13px;
 }
@@ -441,11 +449,23 @@ main {
 .container .card .card-table .table-header th {
     background-color: #F1F2F8;
     font-size: 14px;
+    padding: 15px 3px;
     text-align: left;
+}
+
+
+
+.bolder {
+    font-weight: 600;
+}
+
+.layout .clienti.container .card .card-title .card-actions.summary-actions span {
+    font-size: 22px;
 }
 
 .container .card .card-table tr {
     border-bottom: 1px solid var(--border-color, #ddd);
+    margin-bottom: 10px;
 }
 
 .container .card.container-card .card-title .card-action {
@@ -490,30 +510,47 @@ main {
 
 .clienti.container .card .card-content .card-graphic .list-month {
     display: flex;
-    justify-content: end;
+    justify-content: space-evenly;
     font-size: 14px;
     color: #6F7287;
-    gap: 21px;
+    margin-left: 22px;
     margin-bottom: 5px;
+}
+
+.layout .container .card.container-card .card-table.no-justify-content tr td div {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0px;
+    justify-content: normal;
+    align-items: baseline;
 }
 
 .clienti.container .card .card-content .card-graphic .container-graphic {
     display: flex;
     gap: 5px;
 }
-.clienti.container .card .card-content .card-graphic .list-cash-y{
+
+.clienti.container .card .card-content .card-graphic .list-cash-y {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
-    gap: 24px;
-}
-.clienti.container .card .card-content .card-graphic .summary .table-summary {
-    text-align: center; 
-    align-items: center;
-    padding: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    justify-content: space-around;
 }
 
-.clienti.container .card .card-content .card-graphic .summary .table-summary .table-header-summary tr th{
+.clienti.container .card .card-content .card-graphic .summary .table-summary {
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.clienti.container .card .card-content .card-graphic .summary .table-summary tr td {
+    padding: 15px 10px;
+}
+
+.clienti.container .card .card-content .card-graphic .summary .table-summary .table-header-summary tr th {
     font-size: 12px;
     color: #797D88;
 }
@@ -523,13 +560,12 @@ main {
 }
 
 .card-graphic .circle {
-  fill: #fff;
-  transition: 0.3s;
-   transform-origin: center;
-   transform-box: fill-box;
+    fill: #fff;
+    transition: 0.3s;
+    transform-origin: center;
+    transform-box: fill-box;
 }
 
 .card-graphic .circle:hover {
-  transform: scale(1.5);
+    transform: scale(1.5);
 }
-
