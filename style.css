@@ -29,12 +29,26 @@ body {
     min-height: 100vh;
 }
 
+#list-hidden {
+    max-height: 0;
+    overflow: hidden;
+    margin: auto;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
 
+#list-hidden.open {
+    max-height: 18px;
+    opacity: 1;
+}
+#list-hidden a {
+    font-size: 15px;
+}
 
-.fixed{
+.fixed {
     display: flex !important;
-        flex-direction: column !important;
-    gap: 20px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
 }
 
 table {
@@ -162,6 +176,12 @@ input {
     font-weight: 900;
     margin-right: 15px;
 }
+
+.layout aside nav ul .fixed #list-hidden a::after {
+    content: '';
+    margin: 0;
+}
+
 
 .layout aside nav ul li a {
     display: flex;
