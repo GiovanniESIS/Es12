@@ -49,9 +49,14 @@
     <div class="layout">
         <aside>
             <nav>
-                <ul id="notFunctional">
+                <ul>
                     <li><a href="#"><i class="fa-solid fa-bell"></i><span>Dashboard</span></a></li>
-                    <li><a href="#"><i class="fa-solid fa-folder"></i><span>Progetti</span></a></li>
+                    <li class="fixed"><a id="link-click" href="#"><i
+                                class="fa-solid fa-folder"></i><span>Progetti</span></a>
+                        <ul>
+                            <li id="list-hidden"><a href="#">Progetto 1</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#"><i class="fa-solid fa-users"></i><span>Clienti</span></a></li>
                     <li><a href="#"><i class="fa-solid fa-file-invoice"></i><span>Fatture</span></a></li>
                     <li><a href="#"><i class="fa-solid fa-coins"></i><span>Finanze</span></a></li>
@@ -680,14 +685,6 @@
         </main>
     </div>
 </body>
-<script>
-    const noFunctionalLinks = document.getElementById('notFunctional');
-
-    noFunctionalLinks.addEventListener('click', function (event) {
-        event.preventDefault();
-        alert('Questo link non è funzionale al momento.');
-    });
-
-</script>
+<script type="text/javascript" src="index.js"></script>
 
 </html>
