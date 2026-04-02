@@ -29,13 +29,13 @@
                     <i class="fa-solid fa-bell"></i>
                     <span class="notification-count">3</span>
                 </div>
-                <div class="user-profile">
+                <div class="user-profile" id="user-profile-id">
                     <div class="user-avatar">
                         <img src="assets/avatars/2.png" alt="User Avatar">
                     </div>
                     <div class="user-menu">
                         <span class="user-name">Marco Rossi</span>
-                        <ul>
+                        <ul id="appear-ul">
                             <li><a href="#">Profile</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#">Logout</a></li>
@@ -53,8 +53,16 @@
                     <li><a href="#"><i class="fa-solid fa-bell"></i><span>Dashboard</span></a></li>
                     <li class="fixed"><a id="link-click" href="#"><i
                                 class="fa-solid fa-folder"></i><span>Progetti</span></a>
-                        <ul>
-                            <li id="list-hidden"><a href="#">Ciao sono una sotto lista</a></li>
+                        <ul id="list-hidden">
+                            <li >
+                                <a href="#">Project-1</a>
+                            </li>
+                            <li>
+                                <a href="#">Project-2</a>
+                            </li>
+                            <li>
+                                <a href="#">Project-3</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="#"><i class="fa-solid fa-users"></i><span>Clienti</span></a></li>
@@ -534,7 +542,7 @@
             <div class="container">
                 <div class="card container-card">
                     <div class="card-title">
-                        <span colspan="3" class="card-title">Progetti Attivi</span>
+                        <span>Progetti Attivi</span>
                         <span class="card-action size">Vedi Tutti</span>
                     </div>
                     <table class="card-table">
@@ -636,7 +644,7 @@
                 </div>
                 <div class="card container-card">
                     <div class="card-title task-title">
-                        <span class="card-title">Task da Fare</span>
+                        <span>Task da Fare</span>
                         <span class="card-action size">+ Aggiungi Task</span>
                     </div>
                     <table class="card-table no-justify-content">
