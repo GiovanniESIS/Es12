@@ -4,8 +4,8 @@
 }
 
 :root {
-    /*--primary-color: #333;
-    --secondary-color: #444;*/
+    /* --primary-color: #333;
+    --secondary-color: #444; */
     --accent-bg-color: #292F41;
     --background-color: #FAFAFC;
     --secondary-bg-color: #F4F4F8;
@@ -415,8 +415,6 @@ main {
     color: var(--waiting-text-color);
     background-color: var(--waiting-bg-color);
 }
-
-
 
 .container.clienti .row-list img {
     width: 30px;
