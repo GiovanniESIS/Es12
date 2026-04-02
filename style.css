@@ -38,7 +38,7 @@ body {
     opacity: 0;
 }
 
-.layout aside nav .fixed #list-hidden.open {
+.layout aside nav .fixed.open #list-hidden {
     display: flex;
     height: auto;
     gap: 20px;
@@ -100,7 +100,7 @@ header .topbar-main {
     position: relative;
 }
 
-.user-menu #appear-ul.open {
+.user-menu #appear-ul.open { 
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -109,7 +109,7 @@ header .topbar-main {
     padding: 15px;
     list-style: none;
     width: 8rem;
-    gap: 10px;
+    gap: 11px;
     position: absolute;
     top: 40px;
     right: 10px;

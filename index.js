@@ -1,9 +1,9 @@
-
 const user_interface = document.getElementById('user-profile-id')
 const appear_ul = document.getElementById('appear-ul')
 
-user_interface.addEventListener('click', function () {
-  appear_ul.classList.toggle('open')
+user_interface.addEventListener('click', function (el) {
+    console.log(el,this)
+    appear_ul.classList.toggle('open')
 })
 
 
