@@ -149,6 +149,7 @@ header .topbar-main {
 .search-form input {
     border: none;
     outline: none;
+    width: 100%;
 }
 
 .search-form,
@@ -364,6 +365,21 @@ main {
     flex-direction: row;
     padding: 8px;
     gap: 10px;
+}
+
+.container.clienti .row-list .client-info .custom-btn {
+    background-color: #688BC5;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top:6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container.clienti .row-list .client-info .custom-btn:hover{
+    background-color: #043077;
 }
 
 .clienti.container .card {
@@ -630,7 +646,7 @@ main {
 }
 
 .modal-shadow {
-    display: flex;
+    display: none;
     justify-content: center;
     position: fixed;
     top: 0;
@@ -640,6 +656,55 @@ main {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+.modal-shadow.flex {
+    display: flex;
+}
+
 .modal-shadow .modal {
     margin: auto;
 }
+
+.modal-shadow .modal form {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+.modal-shadow .modal form input {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.modal-shadow .modal .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-shadow .modal #saving {
+    background-color: #688BC5;
+        color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-shadow .modal #saving:hover {
+    background-color: #043077;
+}
+
+.modal-shadow .modal #close{
+    background-color:#B9443B;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+.modal-shadow .modal #close:hover{
+    background-color:#88261f;
+  
+}
+
