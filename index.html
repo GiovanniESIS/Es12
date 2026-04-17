@@ -54,7 +54,7 @@
                     <li class="fixed"><a id="link-click" href="#"><i
                                 class="fa-solid fa-folder"></i><span>Progetti</span></a>
                         <ul id="list-hidden">
-                            <li >
+                            <li>
                                 <a href="#">Project-1</a>
                             </li>
                             <li>
@@ -469,177 +469,48 @@
                 <div class="card client-card">
                     <div class="card-title">
                         <h4>Clienti recenti</h4>
-                        <div class="card-actions">
+                        <div class="card-actions" id="btn-card-actions">
                             <span class="card-action-list">Vedi Tutti</span>
                         </div>
                     </div>
-                    <div class="client-list">
-
-                        <div class="row-list">
-                            <div class="client-avatar">
-                                <img src="assets/avatars/1.png" alt="Client Avatar">
-                            </div>
-                            <div class="client-info">
-                                <h5>Luca Bianchi</h5>
-                                <h6>TechSolution</h6>
-                            </div>
-                            <div class="client-price">
-                                <span>€ 1.200</span>
-                            </div>
-                        </div>
-                        <div class="row-list">
-                            <div class="client-avatar">
-                                <img src="assets/avatars/1.png" alt="Client Avatar">
-                            </div>
-                            <div class="client-info">
-                                <h5>Luca Bianchi</h5>
-                                <h6>TechSolution</h6>
-                            </div>
-                            <div class="client-price">
-                                <span>€ 1.200</span>
-                            </div>
-                        </div>
-                        <div class="row-list">
-                            <div class="client-avatar">
-                                <img src="assets/avatars/1.png" alt="Client Avatar">
-                            </div>
-                            <div class="client-info">
-                                <h5>Luca Bianchi</h5>
-                                <h6>TechSolution</h6>
-                            </div>
-                            <div class="client-price">
-                                <span>€ 1.200</span>
-                            </div>
-                        </div>
-                        <div class="row-list">
-                            <div class="client-avatar">
-                                <img src="assets/avatars/1.png" alt="Client Avatar">
-                            </div>
-                            <div class="client-info">
-                                <h5>Luca Bianchi</h5>
-                                <h6>TechSolution</h6>
-                            </div>
-                            <div class="client-price">
-                                <span>€ 1.200</span>
-                            </div>
-                        </div>
-                        <div class="row-list">
-                            <div class="client-avatar">
-                                <img src="assets/avatars/1.png" alt="Client Avatar">
-                            </div>
-                            <div class="client-info">
-                                <h5>Luca Bianchi</h5>
-                                <h6>TechSolution</h6>
-                            </div>
-                            <div class="client-price">
-                                <span>€ 1.200</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="client-list" id="client-list-id"></div>
 
                 </div>
             </div>
             <div class="container">
                 <div class="card container-card">
                     <div class="card-title">
-                        <span>Progetti Attivi</span>
+                        <span>Carts</span>
                         <span class="card-action size">Vedi Tutti</span>
                     </div>
                     <table class="card-table">
                         <thead>
                             <tr class="table-header">
-                                <th class="col nome">Nome Progetto</th>
-                                <th class="col cliente">Cliente</th>
-                                <th class="col stato">Stato</th>
+                                <th class="col nome">Prodotti Totali</th>
+                                <th class="col cliente">Quantità</th>
+                                <th class="col stato">Totale</th>
 
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="table-row">
-                                <td class="col nome">Piattaforma Ecommerce</td>
-                                <td class="col cliente">Luca Bianchi</td>
-                                <td class="col-stato"><span class="badge in-progress">In corso</span></td>
-
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="col nome">Campagna Social Media</td>
-                                <td class="col cliente">Sara Conti</td>
-                                <td class="col-stato"><span class="badge in-progress">In corso</span></td>
-
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="col nome">Logo e Branding</td>
-                                <td class="col cliente">Davide Esposito</td>
-                                <td class="col-stato"><span class="badge pending">In attesa</span></td>
-
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="col nome">Sito Web Aziendale</td>
-                                <td class="col cliente">Francesca Verdi</td>
-                                <td class="col-stato"><span class="badge completed success">Completo</span></td>
-
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="col nome">Entrate Vo Spese</td>
-                                <td class="col cliente">Meczo Apr</td>
-                                <td class="col-stato"><span class="badge cancelled">Rifiutata</span></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="bodyTable2"></tbody>
                     </table>
                 </div>
                 <div class="card container-card">
                     <div class="card-title">
-                        <span>Fatture Recenti</span>
+                        <span>Products</span>
                         <span class="card-action size">Vedi Tutte</span>
                     </div>
-                    <table class="card-table invoices-table">
+                    <table class="card-table invoices-table" id="table-products">
                         <thead>
                             <tr class="table-header">
-                                <th>Numero</th>
-                                <th>Cliente</th>
-                                <th>Stato</th>
-                                <th>Importo</th>
+                                <th>Id prodotto</th>
+                                <th>Nome prodotto</th>
+                                <th>Quantità</th>
+                                <th>Totale</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>F0123</td>
-                            <td>Tech Solutione</td>
-                            <td class="col-stato"><span class="badge success">Pagata</span></td>
-                            <td>€ 3.500</td>
-                        </tr>
-
-                        <tr>
-                            <td>F0123</td>
-                            <td>Ristorante Bella Vita</td>
-                            <td class="col-stato"><span class="badge cancelled">Rifiutata</span></td>
-                            <td>€ 1.400</td>
-                        </tr>
-
-                        <tr>
-                            <td>F0121</td>
-                            <td>Studio Creativo</td>
-                            <td class="col-stato"><span class="badge success">Pagata</span></td>
-                            <td>€ 2.400</td>
-                        </tr>
-
-                        <tr>
-                            <td>F0120</td>
-                            <td>Eco Moda</td>
-                            <td class="col-stato"><span class="badge in-progress">In corso</span></td>
-                            <td>€ 9.000</td>
-                        </tr>
-
-                        <tr>
-                            <td>F0119</td>
-                            <td>Design innovativo</td>
-                            <td class="col-stato"><span class="badge pending">In attesa</span></td>
-                            <td>€ 940</td>
-                        </tr>
+                        <tbody id="bodyTable"></tbody>
                     </table>
                 </div>
                 <div class="card container-card">
@@ -692,6 +563,16 @@
             </div>
         </main>
     </div>
+    <div class="modal-shadow">
+        <div class="container">
+            <div class="card modal">
+                <div class="modal-body">
+                    <h1>TEST</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script type="text/javascript" src="index.js"></script>
 
