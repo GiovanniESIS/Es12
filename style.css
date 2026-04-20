@@ -391,11 +391,25 @@ main {
 }
 
 .clienti.container .card.client-card .client-list .row-list .client-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 1;
 }
 
 .clienti.container .card.client-card .client-list {
     margin-top: 15px;
+}
+
+.clienti.container .card.client-card .custom-btn {
+    background-color: #688BC5;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top:6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .clienti.container .card.client-card .client-list .row-list .client-price::after {
@@ -413,6 +427,10 @@ main {
 
 }
 
+.clienti.container .card.client-card .client-list .row-list .client-price {
+    display: flex;
+    align-items: center;
+}
 .success {
     color: var(--success-text-color);
     background-color: #E4F0E7;

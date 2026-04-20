@@ -8,103 +8,100 @@ const modal = document.getElementsByClassName('modal-shadow')[0]
 const nameInput = document.getElementById('name')
 const surnameInput = document.getElementById('surname')
 const companyInput = document.getElementById('company')
+const userId = document.getElementsByName('userId')[0]
 const btnClose = document.getElementById('close')
 const saving = document.getElementById('saving')
+const addBtn = document.getElementById('add-clients')
 let maxUser = 10
 let userList = []
+let cartList = []
+let productsList = []
+const numbersAlreadyGenerated = []
 let show = false
-function userData(maxUser) {
-  fetch(`https://dummyjson.com/users?limit=${maxUser}`).then(res => res.json()).then((userResponse) => {
+let creation = false
 
-    console.log(userResponse.users)
-    userList = userResponse.users
-    renderUserList()
-  });
-}
-
-function renderUserList() {
-  userContainer.innerHTML = ''
-  userList.forEach(item => {
-
-    const rowDiv = document.createElement('div')
-    const custmoButton = document.createElement('button')
-    const divAvatar = document.createElement('div')
-    const spanPrice = document.createElement('span')
-    const divInfo = document.createElement('div')
-    const divPrice = document.createElement('div')
-
-
-    rowDiv.classList = 'row-list'
-    divAvatar.classList = 'client-avatar'
-    divAvatar.innerHTML = `<img src="${item.image}" alt="Client Avatar">`
-    rowDiv.appendChild(divAvatar)
-    custmoButton.classList = 'custom-btn'
-    custmoButton.textContent = "Modifica"
-    divInfo.classList = 'client-info'
-    divInfo.innerHTML = `<h5>${item.firstName + " " + item.lastName}</h5> <h6>${item.company.title}</h6>`
-    custmoButton.addEventListener('click', function () {
-      modificaUtente(item)
-    })
-    divInfo.appendChild(custmoButton)
-
-    rowDiv.appendChild(divInfo)
-    divPrice.classList = 'client-price'
-    spanPrice.textContent = '€ 1.200'
-    divPrice.appendChild(spanPrice)
-
-    rowDiv.appendChild(divPrice)
-    userContainer.appendChild(rowDiv)
-  });
-}
-
-userData(maxUser)
+fetchUser(maxUser)
+fetchProducts()
 
 btnClose.addEventListener('click', function () {
-  showModal()
+  switchModal()
+})
+
+addBtn.addEventListener('click', function () {
+  creation = true;
+
+  nameInput.value = ''
+  surnameInput.value = ''
+  companyInput.value = ''
+
+  switchModal();
 })
 
 function creaUtente() {
-    //da creare
-}
+  const generateId = Math.floor(Math.random() * 900);
+  if (numbersAlreadyGenerated != []) {
+    numbersAlreadyGenerated.push(generateId)
+    console.log("ID AGGIUNTO: " + numbersAlreadyGenerated)
+  } else {
+    for (x of numbersAlreadyGenerated) {
+      if (x == generateId) {
+        console.log(x + " gia è stato usato")
+        generateId = Math.floor(Math.random() * 900);
+      }
+    }
+  }
 
+  userList.push({ id: generateId, image: "assets/avatars/2.png", firstName: nameInput ? nameInput.value : "Nome non definito", lastName: surnameInput.value, company: { title: companyInput.value } })
+}
+saving.addEventListener('click', function () {
+  saveUser()
+})
 function modificaUtente(utente) {
-  showModal()
+  creation = false;
+  switchModal()
+  userId.value = utente.id
   nameInput.value = utente.firstName
   surnameInput.value = utente.lastName
   companyInput.value = utente.company.title
-  saving.addEventListener('click', function () {
-    saveUser(nameInput.value, surnameInput.value, companyInput.value, utente)
-  },{ once: true })
+
 }
-function showModal() {
+
+function filtraUtenti(utente){
+    fetchCarts(utente.id)
+    fetchProducts(utente.id)
+}
+
+function switchModal() {
   if (modal.classList.contains('flex')) {
     console.log(1)
     modal.classList = 'modal-shadow'
-    return
   } else {
     console.log(2)
     modal.classList = 'modal-shadow flex'
-    return
   }
 }
 
-function saveUser(nameIn, surnameIn, companyIn, utente) {
-  //da sistemare e ritornarci
-  if (nameIn != utente.firstName) {
+function saveUser() {
+  if (creation) {
+    creaUtente()
+    creation = false
+  } else {
+    userList = userList.map(item => {
+      if (userId.value == item.id) {
+        item = { ...item, firstName: nameInput.value, lastName: surnameInput.value, company: { ...item.company, title: companyInput.value } }
 
-    console.log(utente.firstName)
-  }
-  if (surnameIn != utente.lastName) {
+        console.log(item)
+      }
 
-    console.log(utente.lastName)
-  }
-  if (companyIn != utente.company.title) {
+      return item
+    })
+    console.log(userList)
 
-    console.log(utente.company.title)
   }
-  
-  showModal()
+  renderUserList()
+  switchModal()
 }
+
 btnSee.addEventListener('click', function () {
   if (show) {
     maxUser = 10;
@@ -114,7 +111,7 @@ btnSee.addEventListener('click', function () {
   show = !show
   console.log(show)
   userContainer.innerHTML = ''
-  userData(maxUser)
+  fetchUser(maxUser)
 })
 
 user_interface.addEventListener('click', function (el) {
@@ -124,82 +121,11 @@ user_interface.addEventListener('click', function (el) {
 })
 
 
-const carts = fetch('https://dummyjson.com/carts?limit=2').then(res => res.json()).then((cartsResponse) => {
-  cartsResponse.carts.forEach(carts => {
-    const tr = document.createElement('tr')
-    const tdTotalProduct = document.createElement('td')
-    const tdQuantitàProduct = document.createElement('td')
-    const tdTotalePrezzo = document.createElement('td')
-    tdTotalProduct.textContent = carts.totalProducts;
-    tdQuantitàProduct.textContent = carts.totalQuantity;
-    tdTotalePrezzo.textContent = "€ " + Math.round(carts.total);
-    tr.appendChild(tdTotalProduct)
-    tr.appendChild(tdQuantitàProduct)
-    tr.appendChild(tdTotalePrezzo)
-    tableContainer2.appendChild(tr)
-    carts.products.forEach(item => {
+const carts = fetchCarts()
 
-      const tr = document.createElement('tr')
-      const tdId = document.createElement('td')
-      const tdNomeProdotto = document.createElement('td')
-      const tdQuantita = document.createElement('td')
-      const tdTotale = document.createElement('td')
-      tdId.textContent = item.id;
-      tdNomeProdotto.innerHTML = `<img style=display:flex; width=50px src="${item.thumbnail}" alt="Products Avatar"> ${item.title}`;
-      tdQuantita.textContent = item.quantity;
-      tdTotale.textContent = "€ " + Math.round(item.total);
-      tr.appendChild(tdId)
-      tr.appendChild(tdNomeProdotto)
-      tr.appendChild(tdQuantita)
-      tr.appendChild(tdTotale)
-      tableContainer.appendChild(tr)
-    })
-  });
-
-})
+//Open and close menu/aside menu 
 document
   .querySelector('aside nav  ul li.fixed')
   .addEventListener('click', function (link) {
     this.classList.toggle('open')
   })
-/*
-<tr class="table-row">
-                                <td class="col nome">Piattaforma Ecommerce</td>
-                                <td class="col cliente">Luca Bianchi</td>
-                                <td class="col-stato"><span class="badge in-progress">In corso</span></td>
-
-                            </tr>
-
-
-
-
- <tr>
-                            <td>F0123</td>
-                            <td>Tech Solutione</td>
-                            <td class="col-stato"><span class="badge success">Pagata</span></td>
-                            <td>€ 3.500</td>
-                        </tr>
-
-
-
-
-
-
-
-
-
-
-
-  <div class="row-list">
-                            <div class="client-avatar">
-                                <img src="assets/avatars/1.png" alt="Client Avatar">
-                            </div>
-                            <div class="client-info">
-                                <h5>Luca Bianchi</h5>
-                                <h6>TechSolution</h6>
-                            </div>
-                            <div class="client-price">
-                                <span>€ 1.200</span>
-                            </div>
-  </div>
-*/

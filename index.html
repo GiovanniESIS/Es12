@@ -207,131 +207,7 @@
                     </div>
 
                 </div>
-                <div class="card">
-                    <div class="card-title">
-                        <h4>Fatture scadute</h4>
-                        <div class="card-actions">
-                            <button class="card-action-button expired"><i class="fa-solid fa-bell"></i></button>
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <div class="card-graphic">
-                            <div class="text-in-card">
-                                <span id="number-expires">3</span>
-                                <span>€2.340</span>
-                            </div>
-                            <svg viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="area-base-3" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#EDCFD0" stop-opacity="1" />
-                                        <stop offset="100%" stop-color="#EDCFD0" stop-opacity="1" />
-                                    </linearGradient>
-
-                                    <linearGradient id="area-second-3" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#F9F4F6" stop-opacity="0.8" />
-                                        <stop offset="100%" stop-color="#F9F4F6" stop-opacity="1" />
-                                    </linearGradient>
-                                </defs>
-
-                                <path d="
-  M 0,125
-  C 45,118 75,92 110,95
-  S 185,130 245,112
-  S 315,50 355,66
-  S 420,140 470,85
-  S 525,40 560,60
-  L 560,160
-  L 0,160
-  Z
-" fill="url(#area-base-3)" />
-
-                                <path d="
-  M 0,130
-  C 45,123 75,97 110,103
-  S 185,140 245,117
-  S 315,63 355,75
-  S 420,160 470,97
-  S 525,53 560,65
-  L 560,165
-  L 0,165
-  Z
-" fill="url(#area-second-3)" />
-
-                                <circle class="circle" cx="105" cy="100" stroke="#2066f3" stroke-width="1" r="7" />
-                                <circle class="circle" cx="215" cy="120" stroke="#2066f3" stroke-width="1" r="7" />
-                                <circle class="circle" cx="335" cy="67" stroke="#2066f3" stroke-width="1" r="7" />
-                                <circle class="circle" cx="525" cy="48 " stroke="#2066f3" stroke-width="1" r="7" />
-
-                            </svg>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card">
-                    <div class="card-title">
-                        <h4>Spese totali</h4>
-                        <div class="card-actions">
-                            <button class="card-action-button total-expenses"><i
-                                    class="fa-solid fa-cash-register"></i></button>
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <div class="card-graphic">
-                            <div class="text-in-card">
-                                <span class="big">€8.200</span>
-                            </div>
-                            <svg viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="area-base" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#7EA6F8" stop-opacity="1" />
-                                        <stop offset="100%" stop-color="#7EA6F8" stop-opacity="1" />
-                                    </linearGradient>
-
-                                    <linearGradient id="area-second" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#EFF4FC" stop-opacity="0.8" />
-                                        <stop offset="100%" stop-color="#EFF4FC" stop-opacity="1" />
-                                    </linearGradient>
-                                </defs>
-
-                                <path d="
-      M 0,125
-      C 40,123 70,110 110,102
-      S 190,100 245,95
-      S 310,108 355,86
-      S 430,28 470,36
-      S 525,72 560,82
-      L 560,160
-      L 0,160
-      Z
-    " fill="url(#area-base)" />
-
-                                <path d="
-      M 0,125
-      C 40,133 70,120 110,112
-      S 190,110 245,106
-      S 310,118 355,94
-      S 430,38 470,48
-      S 525,90 560,88
-      L 560,160
-      L 0,160
-      Z
-    " fill="url(#area-second)" />
-
-
-                                <circle class="circle" cx="110" cy="106" stroke="#2066f3" stroke-width="1" r="7" />
-                                <circle class="circle" cx="220" cy="100" stroke="#2066f3" stroke-width="1" r="7" />
-                                <circle class="circle" cx="320" cy="100" stroke="#2066f3" stroke-width="1" r="7" />
-                                <circle class="circle" cx="460" cy="40" stroke="#2066f3" stroke-width="1" r="7" />
-
-                            </svg>
-                        </div>
-                    </div>
-
-                </div>
+           
 
             </div>
             <div class="clienti container">
@@ -468,11 +344,14 @@
                 </div>
                 <div class="card client-card">
                     <div class="card-title">
+     
                         <h4>Clienti recenti</h4>
+
                         <div class="card-actions" id="btn-card-actions">
                             <span class="card-action-list">Vedi Tutti</span>
                         </div>
                     </div>
+                    <button class="custom-btn" id="add-clients">Aggiungi cliente</button>
                     <div class="client-list" id="client-list-id"></div>
 
                 </div>
@@ -507,57 +386,10 @@
                                 <th>Id prodotto</th>
                                 <th>Nome prodotto</th>
                                 <th>Quantità</th>
-                                <th>Totale</th>
+                                <th>Prezzo</th>
                             </tr>
                         </thead>
                         <tbody id="bodyTable"></tbody>
-                    </table>
-                </div>
-                <div class="card container-card">
-                    <div class="card-title task-title">
-                        <span>Task da Fare</span>
-                        <span class="card-action size">+ Aggiungi Task</span>
-                    </div>
-                    <table class="card-table no-justify-content">
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td>
-                                <div>Preparare preventivo per Tech Solutions</div>
-                                <div>10 Maggio 2024</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td>
-                                <div>Aggiornare il sito web aziendale</div>
-                                <div>16 Maggio 2024</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td>
-                                <div>Inviare fattura a Ristorante Bella Vita</div>
-                                <div>16 Maggio 2024</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td>
-                                <div>Pianificare campagna social media</div>
-                                <div>22 Maggio 2024</div>
-                            </td>
-                        </tr>
                     </table>
                 </div>
             </div>
@@ -575,9 +407,10 @@
                         <input type="text" id="surname">
                         <label for="name">Azienda</label>
                         <input type="text" id="company">
+                        <input type="hidden" name="userId">
                         <div class="buttons">
-                        <button id="saving">Salva modifiche</button>
-                        <button id="close">Chiudi</button>
+                        <button id="saving" type="button">Salva modifiche</button>
+                        <button id="close" type="button">Chiudi</button>
                         </div>
                     </form>
                 </div>
@@ -586,6 +419,9 @@
     </div>
 
 </body>
+<script type="text/javascript" src="render.js"></script>
+<script type="text/javascript" src="requests.js"></script>
 <script type="text/javascript" src="index.js"></script>
+
 
 </html>
