@@ -12,13 +12,14 @@ const userId = document.getElementsByName('userId')[0]
 const btnClose = document.getElementById('close')
 const saving = document.getElementById('saving')
 const addBtn = document.getElementById('add-clients')
-let maxUser = 10
 const numbersAlreadyGenerated = []
 let show = false
 let creation = false
 
-fetchUser(maxUser, function (userList) {
+/* fetchUser(maxUser, function (userList) {
   processUser(userList, function () {
+
+
     console.log("Sono in fetchUser")
     let userIds = userList.map(item => {
       return item.id
@@ -45,7 +46,7 @@ fetchUser(maxUser, function (userList) {
       })
     })
   })
-})
+}) */
 
 
 btnClose.addEventListener('click', function () {
@@ -76,7 +77,13 @@ function creaUtente() {
     }
   }
 
-  userListStore.push({ id: generateId, image: "assets/avatars/2.png", firstName: nameInput ? nameInput.value : "Nome non definito", lastName: surnameInput.value, company: { title: companyInput.value } })
+  userListStore.push({ 
+    id: generateId, 
+    image: "assets/avatars/2.png", 
+    firstName: nameInput.value ? nameInput.value : "Nome non definito", 
+    lastName: surnameInput.value ? surnameInput.value : "Cognome non definito", 
+    company: { title: companyInput.value ? companyInput.value : "Azienda non definita" 
+    } })
 }
 saving.addEventListener('click', function () {
   saveUser()
