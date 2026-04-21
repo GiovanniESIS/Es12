@@ -1,4 +1,13 @@
-function renderUserList() {
+let userListStore = []
+let cartListStore = []
+let productsListStore = []
+
+function renderUserList(userList = null) {
+  if(userList){
+    userListStore = userList
+  } else {
+    userList = userListStore
+  }
   userContainer.innerHTML = ''
   console.log(userList)
   userList.forEach(item => {
@@ -17,8 +26,6 @@ function renderUserList() {
     rowDiv.appendChild(divAvatar)
     divInfo.classList = 'client-info'
     divInfo.innerHTML = `<h5>${item.firstName + " " + item.lastName}</h5> <h6>${item.company.title}</h6>`
-
-
 
     rowDiv.appendChild(divInfo)
     divPrice.classList = 'client-price'
@@ -43,8 +50,12 @@ function renderUserList() {
   });
 }
 
-function renderCarts(){
-    tableContainer.innerHTML = ''
+function renderCarts(cartList = null){
+  if(cartList){
+    cartListStore = cartList
+  } else {
+    cartList = cartListStore
+  }
     tableContainer2.innerHTML = ''
     cartList.forEach(carts => {
       const tr = document.createElement('tr')
@@ -61,7 +72,13 @@ function renderCarts(){
     });
 }
 
-function renderProducts(){
+function renderProducts(productsList){
+  if(productsList){
+    productsListStore = productsList
+  } else {
+    productsList = productsListStore
+  }
+  tableContainer.innerHTML = ''
     console.log("ciao")
     console.log(productsList)
     productsList.forEach(item => {

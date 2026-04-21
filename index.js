@@ -13,15 +13,40 @@ const btnClose = document.getElementById('close')
 const saving = document.getElementById('saving')
 const addBtn = document.getElementById('add-clients')
 let maxUser = 10
-let userList = []
-let cartList = []
-let productsList = []
 const numbersAlreadyGenerated = []
 let show = false
 let creation = false
 
-fetchUser(maxUser)
-fetchProducts()
+fetchUser(maxUser, function (userList) {
+  processUser(userList, function () {
+    console.log("Sono in fetchUser")
+    let userIds = userList.map(item => {
+      return item.id
+    })
+    renderUserList(userList)
+    fetchCarts(userIds, function (cartList) {
+      processCarts(cartList, function () {
+
+        console.log("Sono in Fetchcarts")
+        let productsIds = cartList.map(item => {
+          let cartProductsId = item.products.map(item => {
+            return item.id
+          })
+          return cartProductsId
+        })
+        productsIds = productsIds.flat()
+        renderCarts(cartList)
+        fetchProducts(productsIds, function (productsList) {
+          processProducts(productsList, function () {
+            console.log("Sono in FetchProducts")
+            renderProducts(productsList)
+          })
+        })
+      })
+    })
+  })
+})
+
 
 btnClose.addEventListener('click', function () {
   switchModal()
@@ -51,7 +76,7 @@ function creaUtente() {
     }
   }
 
-  userList.push({ id: generateId, image: "assets/avatars/2.png", firstName: nameInput ? nameInput.value : "Nome non definito", lastName: surnameInput.value, company: { title: companyInput.value } })
+  userListStore.push({ id: generateId, image: "assets/avatars/2.png", firstName: nameInput ? nameInput.value : "Nome non definito", lastName: surnameInput.value, company: { title: companyInput.value } })
 }
 saving.addEventListener('click', function () {
   saveUser()
@@ -66,9 +91,9 @@ function modificaUtente(utente) {
 
 }
 
-function filtraUtenti(utente){
-    fetchCarts(utente.id)
-    fetchProducts(utente.id)
+function filtraUtenti(utente) {
+  fetchCarts(utente.id)
+  fetchProducts(utente.id)
 }
 
 function switchModal() {
@@ -86,16 +111,13 @@ function saveUser() {
     creaUtente()
     creation = false
   } else {
-    userList = userList.map(item => {
+    userListStore = userListStore.map(item => {
       if (userId.value == item.id) {
         item = { ...item, firstName: nameInput.value, lastName: surnameInput.value, company: { ...item.company, title: companyInput.value } }
-
         console.log(item)
       }
-
       return item
     })
-    console.log(userList)
 
   }
   renderUserList()
@@ -121,7 +143,6 @@ user_interface.addEventListener('click', function (el) {
 })
 
 
-const carts = fetchCarts()
 
 //Open and close menu/aside menu 
 document
