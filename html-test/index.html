@@ -17,14 +17,20 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script>
+      function executeCode(elx) {
+        const el = elx.closest('.card').querySelector('.answer code')
+        eval(el.textContent)
+      }
+    </script>
   </head>
 
   <body>
     <div class="container">
       <h1>Esercizi<i class="fa-brands fa-square-js"></i></h1>
 
-        <div class="card"><div class="container-card-content">
-
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un oggetto { a: 1, b: 2, c: 3 } 👉 Restituisci un array con i
             valori moltiplicati per
@@ -44,12 +50,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un oggetto 👉 Restituisci un nuovo oggetto contenente solo i
             valori > 10
@@ -71,12 +79,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di stringhe 👉 Trasformalo in un oggetto { parola:
             lunghezza }
@@ -98,12 +108,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di numeri 👉 Calcola la somma dei numeri positivi
           </div>
@@ -124,12 +136,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array { category, price } 👉 Restituisci un oggetto {
             categoria: somma prezzi }
@@ -158,12 +172,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di numeri 👉 Trova il primo numero > 10 e moltiplicalo
             per 2
@@ -185,12 +201,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array { name, active } 👉 Restituisci i nomi dove active ===
             true
@@ -215,12 +233,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array { name, age } 👉 Ordina per età e restituisci solo i
             nomi
@@ -242,12 +262,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di numeri 👉 Moltiplica tutto per 2 e rimuovi i numeri
             > 50
@@ -265,12 +287,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di stringhe 👉 Conta quante stringhe contengono la
             lettera "a"
@@ -294,12 +318,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array { name, age } 👉 Verifica se esiste almeno una persona
             minorenne
@@ -322,12 +348,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array { name, scores: [] } 👉 Restituisci { name: media }
           </div>
@@ -352,12 +380,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di numeri 👉 Restituisci un array con i quadrati dei
             numeri pari
@@ -380,12 +410,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di stringhe 👉 Filtra le stringhe con lunghezza > 3 e
             trasformale in MAIUSCOLO
@@ -406,12 +438,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di oggetti { name, age } 👉 Restituisci un array con i
             nomi delle persone maggiorenni
@@ -437,12 +471,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array { name, salary } 👉 Calcola la somma degli stipendi >
             1000
@@ -470,12 +506,14 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-
-        </div><div class="card"><div class="container-card-content">
-
+      </div>
+      <div class="card">
+        <div class="container-card-content">
           <div class="task">
             Dato un array di numeri 👉 Rimuovi i duplicati e ordina in modo
             crescente
@@ -497,10 +535,12 @@
 </pre>
           </div>
         </div>
-        <button onclick="goCodeSandBox(this)" class="custom-btn">
+        <button onclick="executeCode(this)" class="custom-btn">
+          Execute Code</button
+        ><button onclick="goCodeSandBox(this)" class="custom-btn">
           open in CodeSandbox
         </button>
-</div>
+      </div>
     </div>
   </body>
 </html>
