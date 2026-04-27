@@ -9,59 +9,136 @@
 
   <script type="module" src="./index.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 </head>
 
 <body>
   <div class="container">
+    <h1>Esercizi<i class="fa-brands fa-square-js"></i></h1>
     <div class="card">
       <div class="container-card-content">
         <div class="task">
 
-          Invertire l'ordine di una stringa
+         Dato un oggetto
+     { a: 1, b: 2, c: 3 }
+    👉 Restituisci un array con i valori moltiplicati per 
 
         </div>
         <div class="answer">
           <pre>
   <code class="language-js">
-    // Dato un oggetto
-    // { a: 1, b: 2, c: 3 }
-    // 👉 Restituisci un array con i valori moltiplicati per 
+    
 
     const obj = { a: 1, b: 2, c: 3 }
 
     const transform = Object.values(obj).map(item => item * 2)
     console.log(transform)
 
-    // Dato un oggetto
-    // 👉 Restituisci un nuovo oggetto contenente solo i valori > 10
+
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un oggetto
+    👉 Restituisci un nuovo oggetto contenente solo i valori > 10
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
+    
 
     const obj = {a:10,b:32,c:53,a2:2}
 
     const transform = Object.values(obj).filter(item => item > 10).map(item =>  ({ item: item }))
     console.log(transform)
 
-    // Dato un array di stringhe
-    // 👉 Trasformalo in un oggetto { parola: lunghezza }
+  
+
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
+
+      <div class="container-card-content">
+        <div class="task">
+
+         Dato un array di stringhe
+    👉 Trasformalo in un oggetto { parola: lunghezza }
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
+    
 
     const letters = ['ciao','come va?','AAA']
 
     const transform = letters.map(item => ({parola: item.length}))
 
     console.log(transform)
+  
 
-    // Dato un array di numeri
-    // 👉 Calcola la somma dei numeri positivi
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array di numeri
+    👉 Calcola la somma dei numeri positivi
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
+    
 
     const numbers = [1,2,3,-5,1,2,423,-132]
 
     const transform = numbers.filter(item => item > 0).reduce((acc,item) => (acc + item),0)
 
     console.log(transform)
+  
 
-    // Dato un array { category, price }
-    // 👉 Restituisci un oggetto { categoria: somma prezzi }
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
+
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array { category, price }
+    👉 Restituisci un oggetto { categoria: somma prezzi }
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
+    
 
     const arr = [
       { category: 'frutta', price: 5 },
@@ -75,19 +152,55 @@
     }, {})
 
     console.log(result)
+  
 
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    // Dato un array di numeri
-    // 👉 Trova il primo numero > 10 e moltiplicalo per 2
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array di numeri
+    👉 Trova il primo numero > 10 e moltiplicalo per 2
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
+    
 
     const numbers = [1,2,3,4,5,12,34,4,12313,1312313131,354353657687]
 
     const transform = numbers.find(item => item > 10) * 2
 
     console.log(transform)
+  
 
-    // Dato un array { name, active }
-    // 👉 Restituisci i nomi dove active === true
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array { name, active }
+    👉 Restituisci i nomi dove active === true
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
+      
 
     const user = [
         {name: "Giovanni", active: true},
@@ -95,12 +208,29 @@
         {name: "Paolo", active: true}
     ]
 
-    const transform = user.filter(item => item.active === true)
+     const transform = user.filter(item => item.active === true)
 
     console.log(transform)
 
-    // Dato un array { name, age }
-    // 👉 Ordina per età e restituisci solo i nomi
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
+
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array { name, age }
+          👉 Ordina per età e restituisci solo i nomi
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const user = [
         {name: "Giovanni", age: 19},
@@ -110,18 +240,49 @@
 
     const transform = user.sort((a, b) => b.age - a.age).map(item => item.name)
     console.log(transform)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
+      <div class="container-card-content">
+        <div class="task">
 
-    // Dato un array di numeri
-    // 👉 Moltiplica tutto per 2 e rimuovi i numeri > 50
+        Dato un array di numeri
+        👉 Moltiplica tutto per 2 e rimuovi i numeri > 50
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const numbers = [1,2,3,4,5,25,232]
 
     const transform = numbers.map(item => item * 2).filter(item => item > 50)
     console.log(transform)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    // Dato un array di stringhe
-    // 👉 Conta quante stringhe contengono la lettera "a"
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array di stringhe
+          👉 Conta quante stringhe contengono la lettera "a"
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+ 
 
     const letters = ['ciao', 'come va?']
     let letterToBeCheck = 'a'
@@ -133,9 +294,25 @@
     },0)
 
     console.log(transform)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    // Dato un array { name, age }
-    // 👉 Verifica se esiste almeno una persona minorenne
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array { name, age }
+          👉 Verifica se esiste almeno una persona minorenne
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const user = [
         {name: "Giovanni", age: 19},
@@ -146,9 +323,25 @@
     const transform = user.find(item => item.age >= 18)
 
     console.log(transform)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    // Dato un array { name, scores: [] }
-    // 👉 Restituisci { name: media }
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array { name, scores: [] }
+          👉 Restituisci { name: media }
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const user = [
         { name: "Giovanni", scores: [1, 2, 3] },
@@ -162,9 +355,24 @@
     });
 
     console.log(transform);
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    /* Dato un array di numeri
-    👉 Restituisci un array con i quadrati dei numeri pari */
+      <div class="container-card-content">
+        <div class="task">
+     Dato un array di numeri
+    👉 Restituisci un array con i quadrati dei numeri pari 
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const numbers = [1,2,3,4,5,6,7,8] /* output: 4,8,12,16 */
 
@@ -175,9 +383,25 @@
         return item * 2
       })
     console.log(evenMult)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    /* Dato un array di stringhe
-    👉 Filtra le stringhe con lunghezza > 3 e trasformale in MAIUSCOLO */
+      <div class="container-card-content">
+        <div class="task">
+
+           Dato un array di stringhe
+        👉 Filtra le stringhe con lunghezza > 3 e trasformale in MAIUSCOLO 
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const letters = ['ciao', 'sono giovanni buono', '12','GIDOAD']
 
@@ -186,9 +410,24 @@
     .map(item => item.toLowerCase())
 
     console.log(transformLetters)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    /* Dato un array di oggetti { name, age }
-    👉 Restituisci un array con i nomi delle persone maggiorenni */
+      <div class="container-card-content">
+        <div class="task">
+
+           Dato un array di oggetti { name, age }
+  👉 Restituisci un array con i nomi delle persone maggiorenni 
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const users = [
         {name: 'Giovanni',age: 19},
@@ -202,9 +441,25 @@
         }
     })
     console.log(transform)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    /* Dato un array { name, salary }
-    👉 Calcola la somma degli stipendi > 1000 */
+      <div class="container-card-content">
+        <div class="task">
+
+          Dato un array { name, salary }
+    👉 Calcola la somma degli stipendi > 1000 
+
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+
 
     const users = [
         {name: 'Giovanni', salary:1468},
@@ -220,9 +475,24 @@
     },0)
 
     console.log(sum)
+  </code>
+</pre>
+        </div>
+        <button onclick="goCodeSandBox( this)" class="custom-btn">
+          open in CodeSandbox
+        </button>
+      </div>
 
-    // Dato un array di numeri
-    // 👉 Rimuovi i duplicati e ordina in modo crescente
+      <div class="container-card-content">
+        <div class="task">
+
+             Dato un array di numeri
+          👉 Rimuovi i duplicati e ordina in modo crescente
+        </div>
+        <div class="answer">
+          <pre>
+  <code class="language-js">
+ 
 
 
     const numbers = [1,1,2,3,4,5,5,6,7,4,0];
@@ -232,8 +502,6 @@
       .sort((a, b) => a - b);
 
     console.log(result);
-
-
   </code>
 </pre>
         </div>
@@ -241,9 +509,25 @@
           open in CodeSandbox
         </button>
       </div>
-
     </div>
   </div>
 </body>
 
-</html>
+</html> 
+
+    
+
+   
+
+    
+
+    
+
+    
+
+    
+
+   
+
+   
+
