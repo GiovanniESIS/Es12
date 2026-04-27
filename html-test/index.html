@@ -25,8 +25,215 @@
         <div class="answer">
           <pre>
   <code class="language-js">
-    const inverter = "oggi mangio una pizza"
-    console.log(inverter.split(' ').reverse().join(' '))
+    // Dato un oggetto
+    // { a: 1, b: 2, c: 3 }
+    // 👉 Restituisci un array con i valori moltiplicati per 
+
+    const obj = { a: 1, b: 2, c: 3 }
+
+    const transform = Object.values(obj).map(item => item * 2)
+    console.log(transform)
+
+    // Dato un oggetto
+    // 👉 Restituisci un nuovo oggetto contenente solo i valori > 10
+
+    const obj = {a:10,b:32,c:53,a2:2}
+
+    const transform = Object.values(obj).filter(item => item > 10).map(item =>  ({ item: item }))
+    console.log(transform)
+
+    // Dato un array di stringhe
+    // 👉 Trasformalo in un oggetto { parola: lunghezza }
+
+    const letters = ['ciao','come va?','AAA']
+
+    const transform = letters.map(item => ({parola: item.length}))
+
+    console.log(transform)
+
+    // Dato un array di numeri
+    // 👉 Calcola la somma dei numeri positivi
+
+    const numbers = [1,2,3,-5,1,2,423,-132]
+
+    const transform = numbers.filter(item => item > 0).reduce((acc,item) => (acc + item),0)
+
+    console.log(transform)
+
+    // Dato un array { category, price }
+    // 👉 Restituisci un oggetto { categoria: somma prezzi }
+
+    const arr = [
+      { category: 'frutta', price: 5 },
+      { category: 'frutta', price: 2 },
+      { category: 'verdura', price: 8 }
+    ]
+
+    const result = arr.reduce((acc, { category, price }) => {
+      acc[category] = (acc[category] || 0) + price
+      return acc
+    }, {})
+
+    console.log(result)
+
+
+    // Dato un array di numeri
+    // 👉 Trova il primo numero > 10 e moltiplicalo per 2
+
+    const numbers = [1,2,3,4,5,12,34,4,12313,1312313131,354353657687]
+
+    const transform = numbers.find(item => item > 10) * 2
+
+    console.log(transform)
+
+    // Dato un array { name, active }
+    // 👉 Restituisci i nomi dove active === true
+
+    const user = [
+        {name: "Giovanni", active: true},
+        {name: "Federico", active: false},
+        {name: "Paolo", active: true}
+    ]
+
+    const transform = user.filter(item => item.active === true)
+
+    console.log(transform)
+
+    // Dato un array { name, age }
+    // 👉 Ordina per età e restituisci solo i nomi
+
+    const user = [
+        {name: "Giovanni", age: 19},
+        {name: "Federico", age: 12},
+        {name: "Paolo", age: 23}
+    ]
+
+    const transform = user.sort((a, b) => b.age - a.age).map(item => item.name)
+    console.log(transform)
+
+
+    // Dato un array di numeri
+    // 👉 Moltiplica tutto per 2 e rimuovi i numeri > 50
+
+    const numbers = [1,2,3,4,5,25,232]
+
+    const transform = numbers.map(item => item * 2).filter(item => item > 50)
+    console.log(transform)
+
+    // Dato un array di stringhe
+    // 👉 Conta quante stringhe contengono la lettera "a"
+
+    const letters = ['ciao', 'come va?']
+    let letterToBeCheck = 'a'
+    const transform = letters.reduce((acc, item) => {
+        if(item.includes(letterToBeCheck)){
+            acc = acc + 1
+        }
+        return acc
+    },0)
+
+    console.log(transform)
+
+    // Dato un array { name, age }
+    // 👉 Verifica se esiste almeno una persona minorenne
+
+    const user = [
+        {name: "Giovanni", age: 19},
+        {name: "Federico", age: 12},
+        {name: "Paolo", age: 23}
+    ]
+
+    const transform = user.find(item => item.age >= 18)
+
+    console.log(transform)
+
+    // Dato un array { name, scores: [] }
+    // 👉 Restituisci { name: media }
+
+    const user = [
+        { name: "Giovanni", scores: [1, 2, 3] },
+        { name: "Federico", scores: [2, 3, 4] }
+    ];
+
+    const transform = user.map(item => {
+        const sum = item.scores.reduce((acc, number) => acc + number, 0);
+        const media = sum / item.scores.length;
+        return { name: item.name, media };
+    });
+
+    console.log(transform);
+
+    /* Dato un array di numeri
+    👉 Restituisci un array con i quadrati dei numeri pari */
+
+    const numbers = [1,2,3,4,5,6,7,8] /* output: 4,8,12,16 */
+
+    const evenMult = numbers
+      .filter(item => item % 2 === 0)
+      .map(item => {
+        console.log(`mult = ${item} * 2 = ${item * 2}`)
+        return item * 2
+      })
+    console.log(evenMult)
+
+    /* Dato un array di stringhe
+    👉 Filtra le stringhe con lunghezza > 3 e trasformale in MAIUSCOLO */
+
+    const letters = ['ciao', 'sono giovanni buono', '12','GIDOAD']
+
+    const transformLetters = letters
+    .filter(item => item.length > 3)
+    .map(item => item.toLowerCase())
+
+    console.log(transformLetters)
+
+    /* Dato un array di oggetti { name, age }
+    👉 Restituisci un array con i nomi delle persone maggiorenni */
+
+    const users = [
+        {name: 'Giovanni',age: 19},
+        {name: 'Giuseppe',age: 13},
+        {name: 'Maria',age: 25}
+    ]
+
+    const transform = users.map(item => {
+        if(item.age >= 18){
+            return item.name
+        }
+    })
+    console.log(transform)
+
+    /* Dato un array { name, salary }
+    👉 Calcola la somma degli stipendi > 1000 */
+
+    const users = [
+        {name: 'Giovanni', salary:1468},
+        {name: 'Andrei', salary: 5800},
+        {name: 'federico', salary: 940}
+    ]
+
+    const sum = users.reduce((acc,item) => {
+        if(item.salary > 1000){
+            return acc+item.salary
+        }
+        return acc
+    },0)
+
+    console.log(sum)
+
+    // Dato un array di numeri
+    // 👉 Rimuovi i duplicati e ordina in modo crescente
+
+
+    const numbers = [1,1,2,3,4,5,5,6,7,4,0];
+
+    const result = numbers
+      .filter((item, index, arr) => arr.indexOf(item) === index)
+      .sort((a, b) => a - b);
+
+    console.log(result);
+
+
   </code>
 </pre>
         </div>
