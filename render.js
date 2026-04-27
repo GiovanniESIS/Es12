@@ -89,7 +89,7 @@ function renderProducts(productsList){
         const tdTotale = document.createElement('td')
         tdId.textContent = item.id;
         tdNomeProdotto.innerHTML = `<img style=display:flex; width=50px src="${item.thumbnail}" alt="Products Avatar"> ${item.title}`;
-        tdQuantita.textContent = item.quantity;
+        tdQuantita.textContent = item.category;
         tdTotale.textContent = "€ " + Math.round(item.price);
         tr.appendChild(tdId)
         tr.appendChild(tdNomeProdotto)

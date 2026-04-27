@@ -31,7 +31,7 @@ function processCarts(data) {
   })
 }
 
-function processProducts(data,) {
+function processProducts(data) {
   return new Promise((resolve, reject) => {
     tableContainer.innerHTML = '<img src="assets/Loading.gif" style="width:70px; height:70px;">'
     setTimeout(function () {
@@ -41,7 +41,40 @@ function processProducts(data,) {
 }
 
 
-fetchUser(maxUser).then(userResponse => {
+async function loadingData() {
+  try {
+    const userResponse = await fetchUser(maxUser)
+    console.log(userResponse)
+    const userList = await processUser(userResponse.users)
+    renderUserList(userList)
+    let userIds = userList.map(item => {
+      return item.id
+    })
+    const cartResponse = await fetchCarts(userIds)
+    const cartList = await processCarts(cartResponse.carts)
+
+    renderCarts(cartList)
+
+    let productsIds = cartList.map(item => {
+      let cartProductsId = item.products.map(item => {
+        return item.id
+      })
+
+      return cartProductsId
+    })
+    productsIds = productsIds.flat()
+    const productResponse = await fetchProducts(productsIds)
+    const productsList = await processProducts(productResponse.products)
+    renderProducts(productsList)
+    
+  } catch (err) {
+    console.error("Errore:", err.message);
+  }
+}
+
+loadingData()
+
+/*fetchUser(maxUser).then(userResponse => {
   return processUser(userResponse.users)
 })
   .then(userList => {
@@ -69,4 +102,4 @@ fetchUser(maxUser).then(userResponse => {
     return processProducts(productsList.products)
   }).then(productsList => {
     renderProducts(productsList)
-  })
+  })*/

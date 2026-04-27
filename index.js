@@ -16,38 +16,6 @@ const numbersAlreadyGenerated = []
 let show = false
 let creation = false
 
-/* fetchUser(maxUser, function (userList) {
-  processUser(userList, function () {
-
-
-    console.log("Sono in fetchUser")
-    let userIds = userList.map(item => {
-      return item.id
-    })
-    renderUserList(userList)
-    fetchCarts(userIds, function (cartList) {
-      processCarts(cartList, function () {
-
-        console.log("Sono in Fetchcarts")
-        let productsIds = cartList.map(item => {
-          let cartProductsId = item.products.map(item => {
-            return item.id
-          })
-          return cartProductsId
-        })
-        productsIds = productsIds.flat()
-        renderCarts(cartList)
-        fetchProducts(productsIds, function (productsList) {
-          processProducts(productsList, function () {
-            console.log("Sono in FetchProducts")
-            renderProducts(productsList)
-          })
-        })
-      })
-    })
-  })
-}) */
-
 
 btnClose.addEventListener('click', function () {
   switchModal()

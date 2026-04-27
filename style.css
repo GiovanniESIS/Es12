@@ -101,7 +101,7 @@ header .topbar-main {
     position: relative;
 }
 
-.user-menu #appear-ul.open { 
+.user-menu #appear-ul.open {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -123,7 +123,7 @@ header .topbar-main {
     font-family: Arial, sans-serif;
 }
 
-.user-menu #appear-ul a:hover{
+.user-menu #appear-ul a:hover {
     color: #3498db;
 }
 
@@ -373,12 +373,12 @@ main {
     border: none;
     padding: 5px;
     border-radius: 5px;
-    margin-top:6px;
+    margin-top: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.container.clienti .row-list .client-info .custom-btn:hover{
+.container.clienti .row-list .client-info .custom-btn:hover {
     background-color: #043077;
 }
 
@@ -407,7 +407,7 @@ main {
     border: none;
     padding: 5px;
     border-radius: 5px;
-    margin-top:6px;
+    margin-top: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -431,6 +431,7 @@ main {
     display: flex;
     align-items: center;
 }
+
 .success {
     color: var(--success-text-color);
     background-color: #E4F0E7;
@@ -559,6 +560,8 @@ main {
 .container .card .card-table tr {
     border-bottom: 1px solid var(--border-color, #ddd);
     margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .container .card.container-card .card-title .card-action {
@@ -687,6 +690,7 @@ main {
     flex-direction: column;
     padding: 16px;
 }
+
 .modal-shadow .modal form input {
     margin-top: 2px;
     margin-bottom: 15px;
@@ -700,7 +704,7 @@ main {
 
 .modal-shadow .modal #saving {
     background-color: #688BC5;
-        color: white;
+    color: white;
     border: none;
     font-size: 18px;
     border-radius: 5px;
@@ -712,8 +716,8 @@ main {
     background-color: #043077;
 }
 
-.modal-shadow .modal #close{
-    background-color:#B9443B;
+.modal-shadow .modal #close {
+    background-color: #B9443B;
     color: white;
     border: none;
     font-size: 18px;
@@ -721,8 +725,8 @@ main {
     padding: 5px;
     transition: background-color 0.3s ease;
 }
-.modal-shadow .modal #close:hover{
-    background-color:#88261f;
-  
-}
 
+.modal-shadow .modal #close:hover {
+    background-color: #88261f;
+
+}
